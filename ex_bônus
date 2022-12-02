@@ -1,0 +1,35 @@
+/*Exercicio bônus dia 02/12*/
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+  char frase[] = "perai monica, vamos resolver nossas diferenças de um jeito inteligente";
+  char dest[500];
+  int i, j, n;
+  char c;
+
+  j = 0;
+  n = strlen(frase);
+  for(i = 0; i < n; i++)
+  {
+    if(frase[i] == 'r' && frase[i+1] >= 'a' && frase[i+1] <= 'z')
+    {
+      c = 'l';
+      if(frase[i+1] == 'r')
+        i++;
+    }
+    else
+      c = frase[i];
+
+    dest[j] = c;
+    j++;
+  }
+  dest[j] = '\0';
+
+  printf("%s\n", dest);
+
+  return 0;
+}
