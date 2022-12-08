@@ -6,11 +6,11 @@
 int main()
 
 {
-    char frase[100];
-    char frase_nv[100];
+    char frase[99];
+    char frase_nv[99];
 
     printf("Digite o texto que deseja transformar: ");
-    fgets(frase, 100, stdin);
+    fgets(frase, 99, stdin);
 
     int x = 0;
     
