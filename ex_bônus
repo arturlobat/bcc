@@ -1,35 +1,41 @@
 /*Exercicio bônus dia 02/12*/
 
-
 #include <stdio.h>
 #include <string.h>
 
 int main()
+
 {
-  char frase[] = "perai monica, vamos resolver nossas diferenças de um jeito inteligente";
-  char dest[500];
-  int i, j, n;
-  char c;
+    char frase[100];
+    char frase_nv[100];
 
-  j = 0;
-  n = strlen(frase);
-  for(i = 0; i < n; i++)
-  {
-    if(frase[i] == 'r' && frase[i+1] >= 'a' && frase[i+1] <= 'z')
+    printf("Digite o texto que deseja transformar: ");
+    fgets(frase, 100, stdin);
+
+    int x = 0;
+    
+    for (int i = 0; frase[i] != '\0'; i++) 
+    
     {
-      c = 'l';
-      if(frase[i+1] == 'r')
-        i++;
+        if (frase[i] == 'r' || frase[i] == 'R')
+        
+        {
+         if (frase[i + 1] != ' ' && frase[i + 1] != '\n' && frase[i + 1] != 'r') (frase[i] == 'r') ? (frase_nv[x]) = 'l' : (frase_nv[x] = 'L');
+         else if (frase[i + 1] == ' ' || frase[i+ 1] == '\n') frase_nv[x] = frase[i];
+         else if (frase[i + 1] == 'r') 
+          {
+                (frase[i] == 'r') ? (frase_nv[x]) = 'l' : (frase_nv[x] = 'L');
+                i++;
+          }
+         
+        } 
+        else 
+        frase_nv[x] = frase[i]; x++;
     }
-    else
-      c = frase[i];
 
-    dest[j] = c;
-    j++;
-  }
-  dest[j] = '\0';
+    frase_nv[x] = '\0';
 
-  printf("%s\n", dest);
+    printf("O texto transformado (sem letras R's): %s\n", frase_nv);
 
-  return 0;
+    return 0;
 }
